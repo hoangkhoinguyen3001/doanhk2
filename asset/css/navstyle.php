@@ -20,7 +20,7 @@
     }
     .navbar .navbar-brand{
             color: white;
-            margin-left: 100px;
+            margin-left: 80px;
     }
     .navbar .navbar-nav li a{
             color: white !important;
