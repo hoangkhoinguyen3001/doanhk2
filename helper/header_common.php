@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-sm navbar-light">
-    <a class="navbar-brand align-self-start" href="#">WINT ZOO</a>
+    <a class="navbar-brand align-self-start" href="http://localhost:8080/doanhk2/doanhk2/index.php">WINT ZOO</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
