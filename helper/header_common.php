@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav ">
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8080/doanhk2.1/doanhk2.1/client/experience.php">EXPERIENCE <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="http://localhost:8080/doanhk2/doanhk2/client/experience.php">EXPERIENCE <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">LEISURE AND DINNING</a>
