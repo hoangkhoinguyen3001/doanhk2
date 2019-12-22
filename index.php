@@ -4,7 +4,7 @@
 	<?php include "./helper/bootstrap_common.php";?>
  </head>
  <?php include "./asset/css/navstyle.php";?>
- 
+ <?php include "./asset/css/carosel.php";?>
  <body>    
     <?php include "./helper/header_common.php";?>
     <div id="my-carousel" class="carousel slide" data-ride="carousel">
