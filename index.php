@@ -5,6 +5,7 @@
  </head>
  <?php include "./asset/css/navstyle.php";?>
  <?php include "./asset/css/carosel.php";?>
+ <?php include "./asset/css/footerstyle.php";?>
  <body>
     <?php include "./setting/constant.php";?>   
     <?php $Detect = HOME ;?>    
@@ -52,7 +53,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    <?php include "./asset/css/footerstyle.php";?>
+    
     <?php include "./helper/footer_common.php";?>
     <?php include "./helper/script.php";?>
 </body>

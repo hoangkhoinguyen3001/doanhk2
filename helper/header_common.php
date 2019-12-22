@@ -10,7 +10,7 @@
             <a class="nav-link" href="http://localhost:8080/doanhk2/doanhk2/client/experience.php">EXPERIENCE <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">LEISURE AND DINNING</a>
+            <a class="nav-link" href="http://localhost:8080/doanhk2/doanhk2/client/leisure.php">LEISURE AND DINNING</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">PARKS CHARACTERS</a>
