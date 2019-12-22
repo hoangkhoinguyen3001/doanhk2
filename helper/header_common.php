@@ -22,7 +22,7 @@
             <a class="nav-link" href="#">PARK INFORMATION</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">BUSSINESS OPPORTUNITIES</a>
+            <a class="nav-link" href="http://localhost:8080/doanhk2/doanhk2/client/busi.php">BUSSINESS OPPORTUNITIES</a>
         </li>
         </ul>
     </div>

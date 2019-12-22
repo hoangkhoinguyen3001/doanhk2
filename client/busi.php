@@ -3,7 +3,7 @@
 <head> 
 	<?php include "../helper/bootstrap_common.php";?>
  </head>
- <?php include "../asset/css/navstyle.php";?>
+
 <style>
   body{
 		background-color: ;
@@ -50,7 +50,16 @@
 	.contact-form button:focus{
 		box-shadow:none;
   }
+  body > div.container.contact > div:nth-child(2) > footer > div > div > div.col-md-4.col-lg-2.mx-auto.my-md-4.my-0.mt-4.mb-1 > ul > li > p > a{
+    color: white;
+  }
+  body > div.container.contact > div.row{
+    margin-left: 1px;
+    margin-bottom: 10px;
+  }
 </style>
+<?php include "../asset/css/navstyle.php";?>
+ <?php include "../asset/css/footerstyle.php";?>
 <title>Title</title>
 </head>
 <body>
