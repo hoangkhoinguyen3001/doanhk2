@@ -1,9 +1,0 @@
-$user_id
-$username
-$password
-$roleid
-$status
-$usernameErr
-$passwordErr 
-$roleidErr 
-$statusErr
