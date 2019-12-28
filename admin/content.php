@@ -1,7 +1,7 @@
 <?php
 $sql_err ="";
-$date_old = '1980-12-27 23:45:23'; 
-$date_post = date ("Y-m-d H:i:s", strtotime($date_old));
+$date_old = ''; 
+$date_post = date ("Y-m-d", strtotime($date_old));
 
 $title = $detail = $cate_id = $userid = $img_id = "";
 $titleErr = $detailErr = $cate_idErr = $useridErr = $imgidErr = $date_postErr ="";
@@ -43,7 +43,7 @@ if($_SERVER ["REQUEST_METHOD"] == "POST"){
         require "index.php";
         $conn = conn_db();
         $sql = "INSERT INTO content (title, detail, cate_id, user_id, img_id, date_post)
-        VALUES ('{$title}', '{$detail}', {$cate_id}, {$userid}, {$img_id}, {$date_post})";
+        VALUES ('{$title}', '{$detail}', {$cate_id}, {$userid}, {$img_id}, '{$date_post}')";
 
         if (mysqli_query($conn, $sql)) {
             $last_id = mysqli_insert_id($conn);
@@ -69,7 +69,7 @@ if($_SERVER ["REQUEST_METHOD"] == "POST"){
     <br>
     IMAGE ID :<input type="number" name ="img_id" id ="<?=$img_id?>" required> <span><?=$imgidErr?></span>
     <br>
-    DATE POST :<input type="datetime" name ="date_post" id ="<?=$date_post?>" required> <span><?=$date_postErr?></span>
+    DATE POST :<input type="date" name ="date_post" id ="<?=$date_post?>" required> <span><?=$date_postErr?></span>
     <br>
     <input type="submit" value="submit">
 </form>
