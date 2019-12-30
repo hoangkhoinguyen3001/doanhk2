@@ -4,8 +4,8 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-        <ul class="navbar-nav ">
+    <div class="collapse navbar-collapse d-flex " id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ">
         <li class="nav-item">
             <a class="nav-link" href="http://localhost:8080/doanhk2/doanhk2/client/experience.php">EXPERIENCE <span class="sr-only">(current)</span></a>
         </li>
