@@ -1,57 +1,56 @@
-<!--https://www.thesoftwareguy.in/create-category-tree-php-mysql/-->
+<!--https://www.w3school.info/2015/12/22/steps-to-create-dynamic-multilevel-menu-using-php-and-mysql/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<title>Title</title>
+</head>
+<body>
 <?php
-function fetchCategoryTree($parent = 0, $spacing = '', $user_tree_array = '') {
+$con=mysqli_connect("localhost","root","","wint_zoo");
+// Check connection
+if (mysqli_connect_errno())
+{
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
  
-    if (!is_array($user_tree_array))
-    require "index.php";
-    $conn = conn_db();
-    $user_tree_array = array();
-
-    $sql = "SELECT `cate_id`, `cate_name`, `parent_id` FROM `category` WHERE 1 AND `parent_id` = $parent ORDER BY cate_id ASC";
-    $query = mysql_query($sql);
- if (mysql_num_rows($query) > 0) {
-   while ($row = mysql_fetch_object($query)) {
-     $user_tree_array[] = array("cate_id" => $row->cate_id, "cate_name" => $spacing . $row->cate_name);
-     $user_tree_array = fetchCategoryTree($row->cate_id, $spacing . '&nbsp;&nbsp;', $user_tree_array);
-   }
- }
- return $user_tree_array;
-}
-?>
-<?php 
-$categoryList = fetchCategoryTree();
-?>
-<select>
-<?php foreach($categoryList as $cl) { ?>
-  <option value="<?php echo $cl["cate_id"] ?>"><?php echo $cl["cate_name"]; ?></option>
-<?php } ?>
-</select>
-<?php
-function fetchCategoryTreeList($parent = 0, $user_tree_array = '') {
+// Perform queries 
  
- if (!is_array($user_tree_array))
- $user_tree_array = array();
-
-$sql = "SELECT `cate_id`, `cate_name`, `parent_id` FROM `category` WHERE 1 AND `parent` = $parent ORDER BY cate_id ASC";
-$query = mysql_query($sql);
-if (mysql_num_rows($query) > 0) {
-  $user_tree_array[] = "<ul>";
- while ($row = mysql_fetch_object($query)) {
-   $user_tree_array[] = "<li>". $row->cate_name."</li>";
-   $user_tree_array = fetchCategoryTreeList($row->cate_id, $user_tree_array);
- }
- $user_tree_array[] = "</ul>";
-}
-return $user_tree_array;
-}
-
+function get_menu_tree($parent_id) 
+{
+	global $con;
+	$menu = "";
+	$sqlquery = " SELECT *FROM category where status='1' and parent_id='" .$parent_id . "' ";
+	$res=mysqli_query($con,$sqlquery);
+    while($row=mysqli_fetch_array($res,MYSQLI_ASSOC)) 
+	{
+      $menu .="<li><a href='".$row['url']."'>".$row['cate_name']."</a>";
+		   
+      
+      $menu = "<ul>".get_menu_tree($row['{cate_id}'])."</ul>"; //call  recursivel
+		   
+ 		  $menu .= "</li>";
+ 
+    }
+    
+    return $menu;
+} 
 ?>
-<ul>
-<?php
-  $res = fetchCategoryTreeList();
-  foreach ($res as $r) {
-    echo  $r;
-  }
-?>
-</ul>
- View Demo
+<h1>Create Nested menu Tree by Mysql php</h1>
+<ul class="main-navigation">
+<?php echo get_menu_tree(0);//start from root menus having parent id 0 ?>
+</ul> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+<?php mysqli_close($con); ?>
+
+
+
